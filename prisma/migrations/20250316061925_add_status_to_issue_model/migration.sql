@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `issue` ADD COLUMN `status` ENUM('OPEN', 'IN_PROGRESS', 'CLOSED') NOT NULL DEFAULT 'OPEN';

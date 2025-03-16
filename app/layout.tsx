@@ -4,6 +4,8 @@ import localFont from 'next/font/local'
 import "./globals.css";
 import NavBar from "./NavBar";
 import { Suspense } from "react";
+import "@radix-ui/themes/styles.css";
+import { Theme } from '@radix-ui/themes';
 
 
 const roboto = Roboto({
@@ -24,16 +26,15 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body
-        className={`${pacifico.variable} ${roboto.variable} antialiased`}
-        style={{}}
-      >
-        <NavBar/>
-        <main>
-          <Suspense fallback={<p>Loading ...</p>}>
-            {children}
-          </Suspense>
-        </main>
+      <body className={`${pacifico.variable} ${roboto.variable} antialiased`} style={{}}>
+        <Theme>
+          <NavBar/>
+          <main>
+            <Suspense fallback={<p>Loading ...</p>}>
+              {children}
+            </Suspense>
+          </main>
+        </Theme>
       </body>
     </html>
   );

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",
+    "@radix-ui/themes": "^3.2.1",
     "@react-email/components": "^0.0.33",
     "classnames": "^2.5.1",
     "fast-sort": "^3.4.1",
