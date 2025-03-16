@@ -43,11 +43,11 @@ const Page = async ({searchParams: { sortOrder }}: Props) => {
 
   return (
     <div>
-        <h1 className='mb-5'>
+        <h1 className='mb-5 flex space-x-3'>
             soring order: &nbsp;
             <Link href="./users?sortOrder=name">
                 Name
-            </Link>&nbsp;&nbsp;&nbsp;
+            </Link>
             <Link href="./users?sortOrder=email">
                 Email
             </Link>
