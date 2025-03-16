@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
+import "./theme-config.css"
 import NavBar from "./NavBar";
 import { Suspense } from "react";
 import "@radix-ui/themes/styles.css";
-import { Theme } from '@radix-ui/themes';
+import { Theme, ThemePanel } from '@radix-ui/themes';
 
 
-const roboto = Roboto({
-  variable: "--font-geist-mono",
-  subsets: ['latin'],
-})
+const inter = Inter({
+	subsets: ["latin"],
+	display: "swap",
+	variable: "--font-inter",
+});
 
 const pacifico = localFont({
   variable: "--font-pacifico",
@@ -26,8 +28,9 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <html lang="en">
-      <body className={`${pacifico.variable} ${roboto.variable} antialiased`} style={{}}>
-        <Theme>
+      <body className={inter.variable} 
+      style={{fontFamily: "inter"}}>
+      <Theme accentColor="violet">
           <NavBar/>
           <main>
             <Suspense fallback={'./loading'}>
