@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Roboto } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.css";
 import NavBar from "./NavBar";
+import { Suspense } from "react";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
+const roboto = Roboto({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  subsets: ['latin'],
+})
+
+const pacifico = localFont({
+  variable: "--font-pacifico",
+  src: '../public/fonts/Pacifico.ttf',
+})
 
 export const metadata: Metadata = {
   title: "Erfan Poursoleimani",
@@ -22,10 +25,15 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${pacifico.variable} ${roboto.variable} antialiased`}
+        style={{}}
       >
         <NavBar/>
-        <main>{children}</main>
+        <main>
+          <Suspense fallback={<p>Loading ...</p>}>
+            {children}
+          </Suspense>
+        </main>
       </body>
     </html>
   );

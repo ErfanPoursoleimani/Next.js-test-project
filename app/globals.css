@@ -1,1 +1,9 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+@layer base {
+    h1 {
+        @apply text-2xl
+    }
+}
+
