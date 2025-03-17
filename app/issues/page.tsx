@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Button, Table } from '@radix-ui/themes'
 import React from 'react'
 import { prisma } from '@/prisma/client'
+import IssueStatusBadge from './IssueStatusBadge'
 
 
 const IssuesPage = async () => {
@@ -30,10 +31,10 @@ const IssuesPage = async () => {
               <Table.Cell>
                 {issue.title}
                 <div className='block md:hidden mt-1'>
-                  {issue.status}
+                  <IssueStatusBadge status={issue.status}/>
                 </div>
               </Table.Cell>
-              <Table.Cell className='hidden md:table-cell'>{issue.status}</Table.Cell>
+              <Table.Cell className='hidden md:table-cell'><IssueStatusBadge status={issue.status}/></Table.Cell>
               <Table.Cell className='hidden md:table-cell'>{issue.createdAt.toDateString()}</Table.Cell>
             </Table.Row>
           ))}
