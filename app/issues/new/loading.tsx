@@ -2,7 +2,9 @@ import React from 'react'
 
 const LodingNewIssuePage = () => {
   return (
-    <div>LodingNewIssuePage</div>
+    <main className='flex justify-center items-center h-dvh'>
+        <span className="loading loading-spinner loading-sm"></span>
+    </main>
   )
 }
 

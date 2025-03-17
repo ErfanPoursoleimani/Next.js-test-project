@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-import { TextField, Button, Callout, Text } from "@radix-ui/themes";
+import { TextField, Button, Callout, Text, TextArea } from "@radix-ui/themes";
 import { useForm, Controller } from 'react-hook-form'
 import axios from 'axios'
 import { useRouter } from "next/navigation";
