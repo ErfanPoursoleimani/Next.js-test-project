@@ -1,12 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
-import createIssueSchema from "./schema"
+import { createIssueSchema } from "@/app/validationSchemas"
 import { prisma } from '@/prisma/client'
-
-
-export function GET(resquest: NextRequest) {
-    const issues = prisma.issue.findMany()
-    return NextResponse.json(issues)
-}
 
 export async function POST(request: NextRequest) {
     const body = await request.json()
@@ -16,14 +10,16 @@ export async function POST(request: NextRequest) {
 
     const issue = await prisma.issue.findUnique({
         where: {
-            title: body.title
+            title: body.title,
+            description: body.description
         }
     })
     if(issue)
-        return NextResponse.json({error: "User already exists"}, {status: 400})
+        return NextResponse.json({error: "Issue already exists"}, {status: 400})
 
     const newIssue = prisma.issue.create({
         data: {
+            
             title: body.title,
             description: body.description
         }
