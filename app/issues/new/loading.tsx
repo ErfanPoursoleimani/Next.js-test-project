@@ -7,7 +7,7 @@ const LodingNewIssuePage = () => {
   return (
     <Box className='max-w-xl'>
       <Skeleton />
-      <Skeleton height='20rm'/>
+      <Skeleton height='20rem'/>
 
     </Box>
   )
