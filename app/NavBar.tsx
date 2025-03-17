@@ -16,7 +16,7 @@ const NavBar = () => {
     const currentPath = usePathname()
 
   return (
-    <nav className='flex space-x-6 border-b mb-6 px-5 h-14 items-center'>
+    <nav className='flex space-x-6 border-b mb-3 px-5 h-14 items-center'>
         <Link href="/"><FaBug /></Link>
         <ul className='flex space-x-6'>
             {links.map(link => 

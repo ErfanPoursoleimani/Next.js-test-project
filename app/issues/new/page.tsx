@@ -54,7 +54,7 @@ const NewIssuePage = () => {
             control={control} 
             render={({field}) => <SimpleMDE placeholder="Description" {...field}/>}/>
           
-          {errors.description && <Text  color="red" as="p">{errors.description.message}</Text>}
+          {errors.description && <Text  color="red" as="p">{errors.description.message?.toLocaleLowerCase()}</Text>}
           <Button disabled={isSubmitting}>Submit New Issue {isSubmitting && <Loading />}</Button>
       </form>
     </div> 

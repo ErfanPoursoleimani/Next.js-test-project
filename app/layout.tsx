@@ -32,7 +32,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       style={{fontFamily: "inter"}}>
       <Theme accentColor="violet">
           <NavBar/>
-          <main>
+          <main className="p-7">
             <Suspense fallback={'./loading'}>
               {children}
             </Suspense>
