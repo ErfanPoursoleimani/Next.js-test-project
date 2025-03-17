@@ -1,10 +1,15 @@
+import { Box } from '@radix-ui/themes'
 import React from 'react'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const LodingNewIssuePage = () => {
   return (
-    <main className='flex justify-center items-center h-dvh'>
-        <span className="loading loading-spinner loading-sm"></span>
-    </main>
+    <Box className='max-w-xl'>
+      <Skeleton />
+      <Skeleton height='20rm'/>
+
+    </Box>
   )
 }
 

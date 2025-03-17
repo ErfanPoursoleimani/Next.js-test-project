@@ -10,12 +10,13 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { createIssueSchema } from "@/app/validationSchemas";
 import { z } from 'zod'
 import Loading from "@/app/loading";
+import delay from "delay";
  
 type IssueForm = z.infer<typeof createIssueSchema>
 
 
-const NewIssuePage = () => {
-
+const NewIssuePage = async () => {
+  await delay(2000)
   const {register, control, handleSubmit, formState: { errors }} = useForm<IssueForm>({
     resolver: zodResolver(createIssueSchema)
   })
